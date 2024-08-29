@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/stageFragment">
+
+    <fragment
+        android:id="@+id/stageFragment"
+        android:name="com.playground.webrtcplayground.fragments.StageFragment"
+        android:label="fragment_stage"
+        tools:layout="@layout/fragment_stage" >
+        <action
+            android:id="@+id/action_stageFragment_to_videoCallFragment"
+            app:destination="@id/videoCallFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoCallFragment"
+        android:name="com.playground.webrtcplayground.fragments.VideoCallFragment"
+        android:label="fragment_video_call"
+        tools:layout="@layout/fragment_video_call" >
+        <action
+            android:id="@+id/action_videoCallFragment_to_stageFragment"
+            app:destination="@id/stageFragment"
+            app:popUpTo="@id/stageFragment"
+            />
+    </fragment>
+</navigation>
